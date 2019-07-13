@@ -1,0 +1,24 @@
+head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    style
+      include style1.css
+body  
+    div(class="text")
+        p Hello!!!  
+    div(class="container order")
+        div(class="row pt-4")
+            div(class="new-order box")
+                a(href="/neworders") CREATE NEW ORDERS
+            div(class="del-order box")
+                a(href="/delivered") DELIVERED ORDERS
+            div(class="pen-order box")
+                a(href="/pendingorders") PENDING ORDERS
+                p=a
+            //- if(user=="nishanth@settlrs.com" || user=="gaurav@settlrs.com")
+            //-     div(class="pen-order box")
+            //-         a(href="/newuser") sign up
+            if(flag==1)
+                div(class="pen-order box")
+                    a(href="/newuser") sign up
+                
+

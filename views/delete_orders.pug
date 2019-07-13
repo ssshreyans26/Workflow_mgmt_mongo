@@ -1,0 +1,71 @@
+head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")    
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js")    
+    style
+      include style1.css 
+body
+    nav(class="navbar navbar-expand-lg navbar-light bg-light nav-bar")
+        button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation")
+            span(class="navbar-toggler-icon")
+        div(class="collapse navbar-collapse" id="navbarTogglerDemo01")
+            //- img(src="http://localhost:3000/pendingorders/Workflow_mgmt-master\images\logo.jpg" alt="Image Title")
+            a(class="navbar-brand" href="#") 
+            ul(class="navbar-nav mr-auto mt-2 mt-lg-0")
+                li(class="nav-item")
+                    a(class="nav-link" href="/neworders") CREATE NEW ORDERS 
+                        span(class="sr-only")(current)
+                li(class="nav-item")
+                    a(class="nav-link" href="/pendingorders") PENDING ORDERS
+                li(class="nav-item")
+                    a(class="nav-link" href="/delivered") DELIVERED ORDERS
+                li(class="nav-item")
+                    a(class="nav-link active" href="/delete_orders") DELETE ORDERS
+            form(class="form-inline my-2 my-lg-0")
+                input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
+                //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
+                button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
+
+    -var counter = 0;
+    div(class="container")
+        table(class="tab-border" id="myTable")
+            tr
+                th(class="th1") NUMBER  
+                th(class="th1") CLIENTS
+                th(class="th1") VENDORS
+                th(class="th1") ITEM
+                th(class="th1") QUANTITY
+                th(class="th1") EXPECTED DELIVERY DATE
+                th(class="th1") ADDRESS
+                th(class="th1") ORDER-STATUS
+                th(class="th1") REMOVE
+
+
+            each item in orderdetails
+                if((item.order_status=="PENDING"||item.order_status=="DELIVERED") && item.flag == false )    
+                    -var CLIENT = item.client;
+                    -var VENDOR = item.vendor;
+                    -var ITEM= item.item;
+                    -var QUANTITY=item.quantity;
+                    -var PROPERTY_ADDRESS=item.property_address;
+                    -var ORDER_STATUS = item.order_status;
+                    -var ID =item.order_id;
+                    -var ex_del = item.expected_delivery_date;
+                    -var number= ID + "P"
+                    -counter++;
+                                tr
+                                    th(scope="row" class="num")=counter
+                                        td=CLIENT   
+                                        td=VENDOR
+                                        td=ITEM
+                                        td=QUANTITY
+                                        td=ex_del
+                                        td=PROPERTY_ADDRESS
+                                        td=ORDER_STATUS
+                                        form(action="" method="POST")
+                                        td 
+                                            button(class="btn btn-primary" ,type="submit",  onclick="" ,id=ID)  REMOVE
+        div(class="col-md-4")
+        a(href="/options") HOME                    
+            script
+                include ../Js/deleteorders.js

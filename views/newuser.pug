@@ -1,0 +1,36 @@
+head
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js") 
+    style
+      include style1.css   
+body
+    -var counter = 0;
+    div(class="container")
+        table(class="tab-border table" id="myTable")
+            thead
+                tr
+                    th(class="th1" scope="col") Sl No.
+                    th(class="th1" scope="col") FIRST NAME
+                    th(class="th1" scope="col") LAST NAME
+                    th(class="th1" scope="col") EMAIL-ID
+                    th(class="th1" scope="col") DESIGNATION
+                    th(class="th1" scope="col") a 
+            each item in newusers
+                    -var FIRST_NAME = item.firstname;
+                    -var LAST_NAME= item.lastname;
+                    -var USER= item.user;
+                    -var DESIGNATION=item.designation;
+                    -var ID=item.id;
+                    -counter++;
+                                tbody
+                                    tr
+                                        th(scope="row" class="num")=counter
+                                            td=FIRST_NAME  
+                                            td=LAST_NAME
+                                            td=USER
+                                            td=DESIGNATION
+                                            td 
+                                                a(class="btn btn-primary accept" , href="/accept?is="+ID)  ACCEPT
+                                            td 
+                                                a(class="btn btn-primary reject" ,href="/reject?is="+ID) REJECT
