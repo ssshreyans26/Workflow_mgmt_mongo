@@ -6,10 +6,25 @@ console.log("cp3.js working fine");
         e.preventDefault();
         var str = this.id;
         console.log(typeof str);
+        var pen_id = str + 'Q';
+        var status = str + 'R';
+        console.log(pen_id)
         var cid = str+'P';
         var qty = $('#'+cid).val();
-        console.log(str)
-        console.log(qty)
+        var oqty = $('#'+cid).attr("oqty");
+        console.log(oqty);
+        var pen_qty = oqty -qty;
+        console.log(pen_qty);
+       $('#'+pen_id).html(pen_qty);
+        if(pen_qty==0){
+          $('#'+status).html("DELIVERED");
+        }
+        else if(pen_qty>0){
+          $('#'+status).html("PARTIALLY_PENDING");
+        }
+         
+        console.log(str);
+        console.log(qty);
         $.ajax({
           type: "POST",
           url: '/update' ,

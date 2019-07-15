@@ -6,13 +6,14 @@ console.log("cp3.js working fine");
           console.log(this.id);
           e.preventDefault();
           var str = this.id;
-
+          var del_qty = str + "Q";
           console.log(typeof str);
           var cid = str+'P';
           var qty = $('#'+cid).val();
           var did = $('#'+cid).attr("did");
           console.log(did);
           var oqty = $('#'+cid).attr("oqty");
+          $('#'+del_qty).html(qty);
           console.log(oqty)
           console.log(qty)
           $.ajax({

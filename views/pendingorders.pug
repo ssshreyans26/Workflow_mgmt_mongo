@@ -53,19 +53,21 @@ body
                     -var ID =item.order_id;
                     -var ex_del = item.expected_delivery_date;
                     -var number= ID + "P"
+                    -var update = ID + "Q"
+                    -var status = ID + "R"
                     -counter++;
                                 tr
                                     th(scope="row" class="num")=counter
                                         td=CLIENT   
                                         td=VENDOR
                                         td=ITEM
-                                        td=QUANTITY
+                                        td(id=update)=QUANTITY
                                         td=ex_del
                                         td=PROPERTY_ADDRESS
-                                        td=ORDER_STATUS
+                                        td(id=status)=ORDER_STATUS
                                         form(action="" method="POST")
                                         td  
-                                            input(type="number" id=number  name="qty_updated"  min="1" max=QUANTITY)
+                                            input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
                                         td 
                                             button(class="btn btn-primary update" ,type="submit", onclick="" ,id=ID)  UPDATE
     script

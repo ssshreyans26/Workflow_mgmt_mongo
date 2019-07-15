@@ -9,21 +9,24 @@ exports.login = (req, res, next) => {
 
 
 exports.postLogin = (req, res, next) => {
+  var flag = 0;
   Employes.findOne({ 'user': req.body.user }, function (err, user) {
     if (err) throw err;
     console.log(user);
+    console.log(req.body.password)
     if ((user != null) && (user.password == req.body.password)) {
       console.log("success");
       req.session.user = req.body.user;
       // console.log(req.session.user)
       res.redirect('/options');
+      flag = 1;
     }
   })
 
 
   AdminLogin.findOne({ 'user': req.body.user }, function (err, user) {
     if (err) throw err;
-    if (user.password == req.body.password) {
+    if ((user != null)&&(user.password == req.body.password )&& flag==0) {
       console.log("success");
       req.session.user = req.body.user;
       // console.log(req.session.user)
@@ -39,7 +42,7 @@ exports.options = (req, res, next) => {
     flag = 1;
   }
   if (req.session.user == undefined) {
-    res.render("/login.pug");
+    res.render("login.pug");
   }
   else {
     res.render('options.pug', { flag: flag })
