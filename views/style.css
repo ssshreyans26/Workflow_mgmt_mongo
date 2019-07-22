@@ -12,12 +12,8 @@
 */
 .container{
     text-align: center !important; 
-    /* vertical-align: middle;
-    background-color: white;
-    padding:auto;
-    width: 400px;
-    /* height: 100px; */
-    box-shadow: 0 6px 20px 0 #890000;
+    margin: 100px;
+    /* box-shadow: 0 6px 20px 0 #890000; */
 }
 .container-inner{
     height: 300px;
@@ -260,7 +256,7 @@
     -moz-transition: all 0.4s ease;
     transition: all 0.4s ease;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
   }
   
   .btn--radius {
@@ -487,19 +483,20 @@
   
   .title {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 37px;
+    color:rgb(73, 72, 72); 
   }
   
   /* ==========================================================================
      #CARD
      ========================================================================== */
   .card {
-    overflow: hidden;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     background: #fff;
+    /* z-index: -1; */
   }
   
   .card-2 {
@@ -512,8 +509,9 @@
     width: 100%;
     display: table;
     opacity: 0.8;
-    filter: alpha(opacity=60); */
+    filter: alpha(opacity=60);
     padding: 20px;
+    overflow: hidden;
   
   }
   
@@ -528,7 +526,7 @@
   
   .card-2 .card-body {
     display: table-cell;
-    padding: 80px 90px;
+    padding: 0px 90px;
     padding-bottom: 88px;
   }
   
@@ -547,4 +545,50 @@
       padding: 60px 50px;
     }
   }
+  .card-1 {
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    width: 100%;
+    display: table;
+    filter: alpha(opacity=60);
+    padding: 20px;
+    overflow: hidden;
+  
+  }
+  
+  .card-1 .card-heading {
+    background: url("logo.jpg") top left/cover no-repeat;
+    margin: auto;
+    width: 29.1%;
+    display: table-cell;
+    text-align: center;
+
+  }
+  
+  .card-1 .card-body {
+    display: table-cell;
+    padding: 0px 90px;
+    padding-bottom: 88px;
+  }
+  
+  @media (max-width: 767px) {
+    .card-1 {
+      display: block;
+    }
+    .card-1 .card-heading {
+      width: 100%;
+      display: block;
+      padding-top: 230px;
+      background-position: left center;
+    }
+    .card-1 .card-body {
+      display: block;
+      padding: 60px 50px;
+    }
+  }
+
   

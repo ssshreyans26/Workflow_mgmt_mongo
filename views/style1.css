@@ -1,22 +1,22 @@
  /* pending-orders */
 
-.table {
+/* .table {
     border-collapse: collapse;
     width: 100%;
     margin: initial;
-  }
+  } */
 /* .tab-border{
     border-color: #890000;
   } */
 
 
-  .th1{
-      background-color: #676867ad;
+  /* .th1{
+      background-color: #676867ad; */
       /* background-image:  linear-gradient(to bottom, #676867ad , #ebecebad);  */
-      color: #fff;
+      /* color: #fff;
       height: 30px;
-      margin-bottom: 2px;
-      /* padding: 15px; */
+      margin-bottom: 2px; */
+
  }
 th, td {
     text-align: center;
@@ -47,6 +47,12 @@ th, td {
   background-color: #851919 !important;
   
 } */
+.del_in{
+  border: #676867ad  3px solid  !important;
+}
+.del_in:hover{
+  border: #676867ad  3px solid  !important;
+}
 
 .update{
     background-color: #c5c9c5ad;
@@ -81,7 +87,6 @@ th, td {
 }
 .btn-search:hover{
     background-color: #438571 ;
-
 } 
 
 
@@ -185,6 +190,9 @@ a:hover{
   margin-bottom: auto;
 }
 /* new-orders */
+.neworders{
+  margin-top: 80px;
+}
 
 .btn-order{
   color: #3ea3a3;

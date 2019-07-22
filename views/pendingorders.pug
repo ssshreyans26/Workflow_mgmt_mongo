@@ -1,74 +1,119 @@
+doctype html
 head
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")    
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js")
-    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js") 
-    style
-      include style1.css   
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='A sidebar menu as seen on the Google Nexus 7 website')
+  meta(name='keywords' content='google nexus 7 menu, css transitions, sidebar, side menu, slide out menu')
+  meta(name='author' content='Codrops')
+  link(rel='shortcut icon' href='../favicon.ico')
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")    
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js") 
+    //-   style
+    //-     include style1.css   
+  style
+    include main_table.css
+  style
+    include util_table.css
+  style
+    include component.css
+  style
+    include demo.css
+  style
+    include normalize.css
+  style
+    include style.css
+  style
+    include style1.css
+  script
+    include ../Js/modernizr.custom.js
+
 body
-    nav(class="navbar navbar-expand-lg navbar-light bg-light nav-bar")
-        button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation")
-            span(class="navbar-toggler-icon")
-        div(class="collapse navbar-collapse" id="navbarTogglerDemo01")
-            //- img(src="http://localhost:3000/pendingorders/Workflow_mgmt-master\images\logo.jpg" alt="Image Title")
-            a(class="navbar-brand" href="#") 
-            ul(class="navbar-nav mr-auto mt-2 mt-lg-0")
-                li(class="nav-item")
-                    a(class="nav-link" href="/neworders") CREATE NEW ORDERS 
-                        span(class="sr-only")(current)
-                li(class="nav-item")
-                    a(class="nav-link active" href="/pendingorders") PENDING ORDERS
-                li(class="nav-item")
-                    a(class="nav-link" href="/delivered") DELIVERED ORDERS
-                li(class="nav-item")
-                    a(class="nav-link" href="/delete_orders") DELETE ORDERS
-            form(class="form-inline my-2 my-lg-0")
-                input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
-                //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
-                button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
-    //- tables
-    -var counter = 0;
-    div(class="container")
-        table(class="tab-border" id="myTable")
-            tr
-                th(class="th1") NUMBER  
-                th(class="th1") CLIENTS
-                th(class="th1") VENDORS
-                th(class="th1") ITEM
-                th(class="th1") QUANTITY
-                th(class="th1") EXPECTED DELIVERY DATE
-                th(class="th1") ADDRESS
-                th(class="th1") ORDER-STATUS
-                th(class="th1") DELIVER QUANTITIES
-                th(class="th1") UPADTE 
+.container
+    ul#gn-menu.gn-menu-main
+        li.gn-trigger
+            a.gn-icon.gn-icon-menu
+                span Menu
+            nav.gn-menu-wrapper
+                .gn-scroller
+                    ul.gn-menu
+                        li.gn-search-item
+                            input.gn-search(placeholder='Search' type='search')
+                            a.gn-icon.gn-icon-search
+                                span Search
+                        li
+                            a(href='/neworders')
+                                img.ico_n(src='neworders.png ')
+                                | Create New Orders
+                        li
+                             a(href='/pendingorders')
+                                img.ico_n(src='delivery.png  ')
+                                | Pending Orders
+                        li
+                            a(href='/delivered')
+                                img.ico_n(src='icons8-box-64.png ')
+                                | Delivered Orders
+                        li
+                            a(href='/delete_orders')
+                                img.ico_n(src='delete.png ')
+                                | Delete Orders
+        // /gn-scroller
+        li
+            a(href='logout')
+                img.ico(src='logout.png')
+                | Logout
 
+        .limiter
+            .container-table100
+                .wrap-table100
+                    .table100
+                        table
+                            thead
+                                tr.table100-head
+                                    th.column1 NUMBER
+                                    th.column2 CLIENTS
+                                    th.column3 VENDORS
+                                    th.column4 ITEM
+                                    th.column5 QUANTITY
+                                    th.column6 EXPECTED DELIVERY DATE
+                                    th.column7 ADDRESS
+                                    th.column8 ORDER-STATUS
+                                    th.column9 DELIVERED QUANTITIES
+                                    th.column10 UPDATE
 
-            each item in orderdetails
-                if(item.quantity!=0&&item.flag==false)    
-                    -var CLIENT = item.client;
-                    -var VENDOR = item.vendor;
-                    -var ITEM= item.item;
-                    -var QUANTITY=item.quantity;
-                    -var PROPERTY_ADDRESS=item.property_address;
-                    -var ORDER_STATUS = item.order_status;
-                    -var ID =item.order_id;
-                    -var ex_del = item.expected_delivery_date;
-                    -var number= ID + "P"
-                    -var update = ID + "Q"
-                    -var status = ID + "R"
-                    -counter++;
-                                tr
-                                    th(scope="row" class="num")=counter
-                                        td=CLIENT   
-                                        td=VENDOR
-                                        td=ITEM
-                                        td(id=update)=QUANTITY
-                                        td=ex_del
-                                        td=PROPERTY_ADDRESS
-                                        td(id=status)=ORDER_STATUS
-                                        form(action="" method="POST")
-                                        td  
-                                            input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
-                                        td 
-                                            button(class="btn btn-primary update" ,type="submit", onclick="" ,id=ID)  UPDATE
+                                    -var counter = 0
+                            each item in orderdetails
+                                if(item.quantity!=0&&item.flag==false)    
+                                    -var CLIENT = item.client;
+                                    -var VENDOR = item.vendor;
+                                    -var ITEM= item.item;
+                                    -var QUANTITY=item.quantity;
+                                    -var PROPERTY_ADDRESS=item.property_address;
+                                    -var ORDER_STATUS = item.order_status;
+                                    -var ID =item.order_id;
+                                    -var ex_del = item.expected_delivery_date;
+                                    -var number= ID + "P"
+                                    -var update = ID + "Q"
+                                    -var status = ID + "R"
+                                    -counter++
+                                    tbody
+                                    tr
+                                        th(scope="row" class="num")=counter
+                                            td=CLIENT   
+                                            td=VENDOR
+                                            td=ITEM
+                                            td(id=update)=QUANTITY
+                                            td=ex_del
+                                            td=PROPERTY_ADDRESS
+                                            td(id=status)=ORDER_STATUS
+                                            form(action="" method="POST")
+                                            td  
+                                                input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
+                                            td 
+                                                button(class="btn btn-primary update" ,type="submit", onclick="" ,id=ID)  UPDATE
     script
+        include ../Js/classie.js
+        include ../Js/gnmenu.js
+        include ../Js/temp.js
         include ../Js/pendingorders.js
