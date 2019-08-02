@@ -13,7 +13,7 @@ head
     //-   style
     //-     include style1.css   
   style
-    include main_table.css
+    include main_table_pending.css
   style
     include util_table.css
   style
@@ -38,21 +38,17 @@ body
             nav.gn-menu-wrapper
                 .gn-scroller
                     ul.gn-menu
-                        li.gn-search-item
-                            input.gn-search(placeholder='Search' type='search')
-                            a.gn-icon.gn-icon-search
-                                span Search
                         li
                             a(href='/neworders')
-                                img.ico_n(src='neworders.png ')
+                                img.ico_n(src='new-orders.png ')
                                 | Create New Orders
                         li
                              a(href='/pendingorders')
-                                img.ico_n(src='delivery.png  ')
+                                img.ico_n(src='delivered.png')
                                 | Pending Orders
                         li
                             a(href='/delivered')
-                                img.ico_n(src='icons8-box-64.png ')
+                                img.ico_n(src='par-delivered.png ')
                                 | Delivered Orders
                         li
                             a(href='/delete_orders')
@@ -63,6 +59,12 @@ body
             a(href='logout')
                 img.ico(src='logout.png')
                 | Logout
+        li
+            form(class="form-inline my-2 my-lg-0")
+                input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
+                //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
+                button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
+
 
         .limiter
             .container-table100

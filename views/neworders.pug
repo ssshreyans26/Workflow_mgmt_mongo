@@ -1,48 +1,108 @@
+doctype html
 head
-    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
-    style
-      include style1.css
-body(class="bg-color")
-    nav(class="navbar navbar-expand-lg navbar-light bg-light nav-bar")
-        button(class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation")
-            span(class="navbar-toggler-icon")
-        div(class="collapse navbar-collapse" id="navbarTogglerDemo01")
-            a(class="navbar-brand" href="#") 
-            ul(class="navbar-nav mr-auto mt-2 mt-lg-0")
-                li(class="nav-item active")
-                    a(class="nav-link" href="/neworders") CREATE NEW ORDERS 
-                        span(class="sr-only")(current)
-                li(class="nav-item")
-                    a(class="nav-link" href="/pendingorders") PENDING ORDERS
-                li(class="nav-item")
-                    a(class="nav-link" href="/delivered") DELIVERED ORDERS
-                li(class="nav-item")
-                    a(class="nav-link" href="/delete_orders") DELETE ORDERS
-            form(class="form-inline my-2 my-lg-0")
-                input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
-                button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
-    div(class="container")
-        form(method="POST" action="/new_orders")
-            div(class="row")
-                div(class="col-md-4 col-sm-12")
-                    label(class="") CLIENT NAME
-                    input(type="text" class="form-control" placeholder="CLIENT" name="CLIENT")
-                div(class="col-md-4 col-sm-12")
-                    label() VENDOR
-                    input(type="text" class="form-control" placeholder="VENDOR" name="VENDOR")                      
-                div(class="col-md-4 col-sm-12")
-                    label() ITEM
-                    input(type="text" class="form-control" placeholder="ITEM" name="ITEM")                      
-            div(class="row pt-4")
-                div(class="col-md-4 col-sm-12")
-                    label() QUANTITY
-                    input(type="number" class="form-control" placeholder="QUANTITY" name="QUANTITY")                      
-                div(class="col-md-4 col-sm-12")
-                    label() EXPECTED DELIVERY DATE
-                    input(type="date" class="form-control" placeholder="EXPECTED-DELIVERY-DATE" name="date")                      
-                div(class="col-md-4 col-sm-12")
-                    label() PROPERTY ADDRESS
-                    input(type="text" class="form-control" placeholder="ADDRESSS" name="ADDRESS")
-            div(class="row pt-4")
-                div(class="col-md-6 col-sm-12")
-                    button(type="submit" class="btn btn-primary mt-3 btn-order" name="submit") PLACE ORDER
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge,chrome=1')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(name='description' content='A sidebar menu as seen on the Google Nexus 7 website')
+  meta(name='keywords' content='google nexus 7 menu, css transitions, sidebar, side menu, slide out menu')
+  meta(name='author' content='Codrops')
+  link(rel='shortcut icon' href='../favicon.ico')
+  style
+    include component.css
+    include demo.css
+    include normalize.css
+    include style.css
+  script
+    include ../Js/modernizr.custom.js
+body.neworder
+.container
+    ul#gn-menu.gn-menu-main
+        li.gn-trigger
+            a.gn-icon.gn-icon-menu
+                span Menu
+            nav.gn-menu-wrapper
+                .gn-scroller
+                    ul.gn-menu
+                        li
+                            a(href='/neworders')
+                                img.ico_n(src='new-orders.png ')
+                                | Create New Orders
+                        li
+                             a(href='/pendingorders')
+                                img.ico_n(src='delivered.png')
+                                | Pending Orders
+                        li
+                            a(href='/delivered')
+                                img.ico_n(src='par-delivered.png ')
+                                | Delivered Orders
+                        li
+                            a(href='/delete_orders')
+                                img.ico_n(src='delete.png ')
+                                | Delete Orders
+        // /gn-scroller
+        li
+            a(href='logout')
+                img.ico(src='logout.png')
+                | Logout
+
+    //-container
+
+
+    //- div(class="container neworders")
+    //-     form(method="POST" action="/new_orders")
+    //-         div(class="row")
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label(class="") CLIENT NAME
+    //-                 input(type="text" class="form-control" placeholder="CLIENT" name="CLIENT")
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label() VENDOR
+    //-                 input(type="text" class="form-control" placeholder="VENDOR" name="VENDOR")                      
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label() ITEM
+    //-                 input(type="text" class="form-control" placeholder="ITEM" name="ITEM")                      
+    //-         div(class="row pt-4")
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label() QUANTITY
+    //-                 input(type="number" class="form-control" placeholder="QUANTITY" name="QUANTITY")                      
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label() RATE
+    //-                 input(type="number" class="form-control" placeholder="RATE" name="RATE")                      
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 label() PROPERTY ADDRESS
+    //-                 input(type="text" class="form-control" placeholder="ADDRESSS" name="ADDRESS")
+    //-         div(class="row pt-4")
+    //-             div(class="col-md-4 col-sm-12 col-xs-12")
+    //-                 button(type="submit" class="btn btn-primary mt-3 btn-order" name="submit") PLACE ORDER
+.page-wrapper.p-t-180.p-b-100.font-robo
+  .wrapper.wrapper--w960
+    .card.card-1
+      .card-heading
+      .card-body
+        h2.title New Orders
+        form(method='POST' action="/new_orders")
+          .row.row-space
+            .col-2
+                .input-group
+                    input.input--style-2(type='text' placeholder="CLIENT" name="CLIENT")
+            .col-2
+                .input-group
+                    input.input--style-2(type='text' placeholder="VENDOR" name="VENDOR")   
+            .col-2                                     
+                .input-group
+                    input.input--style-2.js-datepicker(type='text' placeholder="ITEM" name="ITEM")
+            .col-2
+                .input-group
+                    input.input--style-2.js-datepicker(type='number' placeholder="QUANTITY" name="QUANTITY")
+          .input-group
+            input.input--style-2.js-datepicker(type="date" placeholder="EXPECTED-DELIVERY-DATE" name="date")
+          .input-group        
+            input.input--style-2.js-datepicker(type="text" placeholder="ADDRESSS" name="ADDRESS")
+          .p-t-30
+            button.btn.btn--radius.btn--green(type='submit') Place Order
+
+
+script
+    include ../Js/classie.js
+    include ../Js/gnmenu.js
+    include ../Js/modernizr.custom.js
+    include ../Js/temp.js

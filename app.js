@@ -19,12 +19,13 @@ app.use(session({ secret: "Shh, its a secret!" }));
 var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 
+
 app.use(bodyParser.json()); //to use a function inside the node app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,"images")));
 const port = 3000
-
+const alert = require("alert-node");
 // Routes
 const userRoutes = require('./routes/user_route');
 app.use(userRoutes);

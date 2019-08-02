@@ -1,6 +1,19 @@
 console.log("cp3.js working fine");
 
     $(document).ready(function(){
+      $("#search").keyup(function () {
+        var value = this.value.toLowerCase().trim();
+      
+        $("table tr").each(function (index) {
+            if (!index) return;
+            $(this).find("td").each(function () {
+                var id = $(this).text().toLowerCase().trim();
+                var not_found = (id.indexOf(value) == -1);
+                $(this).closest('tr').toggle(!not_found);
+                return not_found;
+            });
+        });
+      });
       $(document).on("click","button",function(e){
         console.log(this.id);
         e.preventDefault();
@@ -15,13 +28,19 @@ console.log("cp3.js working fine");
         console.log(oqty);
         var pen_qty = oqty -qty;
         console.log(pen_qty);
+        if(qty>oqty){
+          window.alert("delivered quantity should be less tha total quantity")
+        }
+        if(qty<=oqty){
        $('#'+pen_id).html(pen_qty);
+        }
         if(pen_qty==0){
           $('#'+status).html("DELIVERED");
         }
         else if(pen_qty>0){
           $('#'+status).html("PARTIALLY_PENDING");
         }
+
          
         console.log(str);
         console.log(qty);
@@ -46,18 +65,6 @@ console.log("cp3.js working fine");
 
 
                     
-$("#search").keyup(function () {
-  var value = this.value.toLowerCase().trim();
 
-  $("table tr").each(function (index) {
-      if (!index) return;
-      $(this).find("td").each(function () {
-          var id = $(this).text().toLowerCase().trim();
-          var not_found = (id.indexOf(value) == -1);
-          $(this).closest('tr').toggle(!not_found);
-          return not_found;
-      });
-  });
-});
 
 

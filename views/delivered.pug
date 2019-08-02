@@ -13,7 +13,7 @@ head
   script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js") 
 
   style
-    include main_table.css
+    include main_table_delivered.css
   style
     include util_table.css
   style
@@ -37,31 +37,33 @@ body.delivered
             nav.gn-menu-wrapper
                 .gn-scroller
                     ul.gn-menu
-                        li.gn-search-item
-                            input.form-control.mr-sm-2.box-search(type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Search")
-                            a.gn-icon.gn-icon-search
-                                span Search
                         li
-                            a.scrollbox(href='/neworders')
-                                img.ico(src='neworders.png')
+                            a(href='/neworders')
+                                img.ico_n(src='new-orders.png ')
                                 | Create New Orders
                         li
-                            a(href='/pendingorders')
-                                img.ico(src='delivery.png')
+                             a(href='/pendingorders')
+                                img.ico_n(src='delivered.png')
                                 | Pending Orders
                         li
                             a(href='/delivered')
-                                img.ico(src='icons8-box-64.png')
+                                img.ico_n(src='par-delivered.png ')
                                 | Delivered Orders
                         li
                             a(href='/delete_orders')
-                                img.ico(src='delete.png')
+                                img.ico_n(src='delete.png ')
                                 | Delete Orders
         // /gn-scroller
         li
             a(href='logout')
                 img.ico(src='logout.png')
                 | Logout
+        li
+            form(class="form-inline my-2 my-lg-0")
+                input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
+                //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
+                button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
+
 
 
     .limiter
@@ -79,8 +81,9 @@ body.delivered
                                 th.column6 DELIVERED ON 
                                 th.column7 ADDRESS
                                 th.column8 ORDER-STATUS
-                                th.column9 QUANTITY
-                                th.column10 UPDATE
+                                th.column9 QUANTITY DELIVERED
+                                th.column10 UPDATE QUANTITY IF ERROR
+                                th.column11 UPDATE
 
                             each ele in del
                                 if(ele.flag == false)
@@ -92,9 +95,9 @@ body.delivered
                                         if(item.order_id == ID&&item.flag==false)
                                             -var CLIENT = item.client;
                                             -var VENDOR = item.vendor;
-                                            -var ITEM= item.item;
-                                            -var QUANTITY=item.quantity;
-                                            -var PROPERTY_ADDRESS=item.property_address;
+                                            -var ITEM = item.item;
+                                            -var QUANTITY = item.quantity;
+                                            -var PROPERTY_ADDRESS = item.property_address;
                                             -var ORDER_STATUS = item.order_status;
                                             -var number= ID + "P"
                                             -var update= ID + "Q"
@@ -113,11 +116,10 @@ body.delivered
                                                         td(class="column7")=PROPERTY_ADDRESS
                                                         td(class="column8") DELIVERED
                                                         td=val.qty
-                                                        form(action="" method="POST")
                                                             td( class="column9")
                                                                 input.del_in(type="number" id=number did=val.d_id oqty=val.qty name="err_qty_updated")
                                                             td(class="column10") 
-                                                                button(class="btn btn-primary" type="submit" onclick="" id=ID)  UPDATE
+                                                                button(class="btn btn-primary" type="submit" onclick="" id=ID) UPDATE
 script
     include ../Js/classie.js
     include ../Js/gnmenu.js

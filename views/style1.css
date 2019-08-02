@@ -88,7 +88,16 @@ th, td {
 .btn-search:hover{
     background-color: #438571 ;
 } 
-
+.form-control{
+  width:unset;
+  text-align: center; 
+  margin-left: 10px;   
+}
+.box-search{
+border: 1px solid rgb(204, 202, 202) !important;
+border-radius:2px !important;
+margin-right: 10px;
+}
 
 /* vertical navbar */
 .vertical-menu {

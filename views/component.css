@@ -37,6 +37,7 @@
 		height: 60px;
 		font-size: 13px;
 		border-bottom: #5f6f81 1px solid;
+		z-index: 1;
 }
 
 .gn-menu-main a {
@@ -222,7 +223,7 @@ input.gn-search:focus {
     height: 50px;
 }
 .ico{
-	margin: 0px 14px -18px 9px;
+	margin: 0px 14px 0px 9px;
     height: 50px;
 }
 .gn-icon::before {

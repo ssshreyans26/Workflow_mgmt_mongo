@@ -20,6 +20,8 @@ router.get('/newusers',userController.newusers);
 
 router.get('/accept',userController.accept);
 
+router.get('/logout',userController.logout);
+
 router.get('/reject',userController.reject);
 
 module.exports = router;

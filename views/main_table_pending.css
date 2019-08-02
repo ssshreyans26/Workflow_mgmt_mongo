@@ -1,0 +1,373 @@
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+  }
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  * {
+      /* margin: 0px; 
+      padding: 0px;  */
+      box-sizing: border-box;
+  }
+  
+  body, html {
+      height: 100%;
+      font-family: sans-serif;
+  }
+  
+  /* ------------------------------------ */
+  a {
+      margin: 0px;
+      transition: all 0.4s;
+      -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+  }
+  
+  a:focus {
+      outline: none !important;
+  }
+  
+  a:hover {
+      text-decoration: none;
+  }
+  
+  /* ------------------------------------ */
+  h1,h2,h3,h4,h5,h6 {margin: 0px;}
+  
+  p {margin: 0px;}
+  
+  ul, li {
+      margin: 0px;
+      list-style-type: none;
+  }
+  
+  
+  /* ------------------------------------ */
+  input {
+    /* display: block; */
+      outline: none;
+      border: none !important;
+  }
+  
+  textarea {
+    display: block;
+    outline: none;
+  }
+  
+  textarea:focus, input:focus {
+    border-color: transparent !important;
+  }
+  
+  /* ------------------------------------ */
+  button {
+      outline: none !important;
+      border: none;
+      background: transparent;
+  }
+  
+  button:hover {
+      cursor: pointer;
+  }
+  
+  iframe {
+      border: none !important;
+  }
+  
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ Utiliti ]*/
+  
+  
+  
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ Table ]*/
+  
+  .limiter {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .container-table100 {
+    width: 100%;
+    /* min-height: 100vh; */
+      /* background: #c850c0;
+      background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+      background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+      background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+      background: linear-gradient(45deg, #4158d0, #c850c0); */
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px;
+    text-align: center;
+  }
+  /* .cont{
+    margin: 0px !important;
+  } */
+  
+  .wrap-table100 {
+    width: 1170px;
+    position: relative;
+    /* z-index: -1; */
+  }
+  
+  table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* margin-top: 100px; */
+    /* z-index: -1; */
+  }
+  table * {
+    position: relative;
+  }
+  table td, table th {
+    padding: 15px;
+  }
+  table thead tr {
+    height: 60px;
+    background: #393250;
+    /* background: #36304a; */
+  }
+  table tbody tr {
+    height: 50px;
+    background-color: #e7e3e3;
+  }
+  table tbody tr:last-child {
+    border: 0;
+  }
+  table td, table th {
+    text-align: center;
+  }
+  table td.l, table th.l {
+    text-align: right;
+  }
+  table td.c, table th.c {
+    text-align: center;
+  }
+  table td.r, table th.r {
+    text-align: center;
+  }
+  
+  .table100-head th{
+    font-family: OpenSans-Regular;
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset;
+    
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #dad6d6;
+  }
+  
+  tbody tr {
+    font-family: OpenSans-Regular;
+    font-size: 15px;
+    color: #080808;
+    line-height: 1.2;
+    font-weight: unset;
+  }
+  
+  tbody tr:hover{
+    color: #1d1c1c;
+    background-color: #f7f4f4ec ;
+    cursor: pointer ;
+  }
+  
+  .column1 {
+    width: 260px;
+    padding-left: 40px;
+    text-align: center;
+  }
+  
+  .column2 {
+    width: 160px;
+    text-align: center;
+  }
+  
+  .column3 {
+    width: 245px;
+    text-align: center;
+  }
+  
+  .column4 {
+    width: 110px;
+    text-align: center;
+  }
+  
+  .column5 {
+    width: 170px;
+    text-align: center;
+  }
+  
+  .column6 {
+    width: 170;
+    text-align: center;
+  }
+  .column7{
+    width: 222px;
+    text-align: center;
+  }
+  .column8{
+    width: 222px;
+    text-align: center;
+  }
+  .column9{
+    width: 222px;
+    text-align: center;
+  }
+  .column10{
+    width: 222px;
+    text-align: center;
+  }
+  .del_in{
+    border: #676867ad  2px solid  !important;
+    border-radius: 5px;
+    padding: 2px;
+  }
+  .del_in:hover{
+    border: #676867ad  2px solid  !important;
+  }
+  
+  .update{
+      background-color: #c5c9c5ad;
+      border-color: #676867ad;
+      color: #676867ad;
+      padding: 15px;
+      border-radius: 5px !important; 
+  
+  }
+  .update:hover{
+    background-color: #9d9e9dad;
+    border-color: #9d9e9dad;  
+  }
+  
+  @media screen and (max-width: 992px) {
+    thead, tbody { display: block; }
+
+    .container-table100 {
+        height: 800px;       /* Just for the demo          */
+        overflow-y: auto;    /* Trigger vertical scroll    */
+        overflow-x: hidden;  /* Hide the horizontal scroll */
+    }
+    table {
+      display: block;
+    }
+    table > *, table tr, table td, table th {
+      display: block;
+    }
+    table thead {
+      display: none;
+    }
+    table tbody tr {
+      height: auto;
+      padding: 37px 0;
+    }
+    table tbody tr td {
+      padding-left: 40% !important;
+      margin-bottom: 24px;
+    }
+    table tbody tr td:last-child {
+      margin-bottom: 0;
+    }
+    table tbody tr td:before {
+      font-family: OpenSans-Regular;
+      font-size: 14px;
+      color: #999999;
+      line-height: 1.2;
+      font-weight: unset;
+      position: absolute;
+      width: 40%;
+      left: 30px;
+      top: 0;
+    }
+    table tbody tr th:nth-child(1):before {
+      content: "NUMBER";
+    }
+    table tbody tr td:nth-child(2):before {
+      content: "CLIENTS";
+    }
+    table tbody tr td:nth-child(3):before {
+      content: "VENDORS";
+    }
+    table tbody tr td:nth-child(4):before {
+      content: "ITEM";
+    }
+    table tbody tr td:nth-child(5):before {
+      content: "QUANTITY";
+    }
+    table tbody tr td:nth-child(6):before {
+      content: "EXPECTED DELIVERY DATE";
+    }
+    table tbody tr td:nth-child(7):before {
+      content: "ADDRESS";
+    }
+    table tbody tr td:nth-child(8):before {
+      content: "ORDER-STATUS";
+    }
+    table tbody tr td:nth-child(10):before {
+      content: "DELIVERED QUANTITIES";
+    }
+    table tbody tr td:nth-child(11):before {
+      content: "UPDATE";
+    }
+  
+    .column4,
+    .column5,
+    .column6 {
+      text-align: left;
+    }
+  
+    .column4,
+    .column5,
+    .column6,
+    .column1,
+    .column2,
+    .column3,
+    .column7,
+    .column8,
+    .column9,
+    .column10,
+  
+    tbody tr {
+      font-size: 14px;
+      padding: 0px !important;
+      bottom: 0px;
+    }
+
+  }
+  
+  /* @media (max-width: 576px) {
+    .container-table100 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  } */

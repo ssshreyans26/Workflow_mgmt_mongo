@@ -1,10 +1,16 @@
 const AdminLogin = require("../model1/user.js");
 const SignUp = require("../model1/sign_up.js");
 const Employes = require("../model1/employes.js")
+const alert = require("alert-node");
 
 exports.login = (req, res, next) => {
-  
   res.render('login.pug');  
+}
+
+exports.logout = (req, res, next) => {
+  req.session.user = undefined;
+  res.redirect('/')
+
 }
 
 
@@ -31,6 +37,11 @@ exports.postLogin = (req, res, next) => {
       req.session.user = req.body.user;
       // console.log(req.session.user)
       res.redirect('/options');
+      flag = 1
+    }
+    if(flag==0){
+      alert("Invalid Credentials");
+      res.redirect("/");
     }
   })
 };
