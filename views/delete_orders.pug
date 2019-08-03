@@ -86,7 +86,7 @@ body
 
                                     -var counter = 0
                             each item in orderdetails
-                                if( (item.order_status=="PARTIALLY_PENDING"||item.quantity==0||item.order_status=="PARTIALLY_PENDING") && item.flag ==false )    
+                                if( (item.order_status=="PARTIALLY_PENDING"||item.quantity==0||item.order_status=="PENDING") && item.flag ==false )    
                                     -var CLIENT = item.client;
                                     -var VENDOR = item.vendor;
                                     -var ITEM= item.item;

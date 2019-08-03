@@ -56,7 +56,7 @@ exports.options = (req, res, next) => {
     res.render("login.pug");
   }
   else {
-    res.render('options.pug', { flag: flag })
+    res.redirect('/pendingorders');
   }
 };
 
