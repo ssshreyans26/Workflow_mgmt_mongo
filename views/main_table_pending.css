@@ -274,12 +274,15 @@
     thead, tbody { display: block; }
 
     .container-table100 {
-        height: 800px;       /* Just for the demo          */
+        height: 1100px;       /* Just for the demo          */
         overflow-y: auto;    /* Trigger vertical scroll    */
         overflow-x: hidden;  /* Hide the horizontal scroll */
+        margin: 50px 0 200px 0 ; 
     }
     table {
       display: block;
+      height: auto;
+      
     }
     table > *, table tr, table td, table th {
       display: block;
@@ -290,6 +293,7 @@
     table tbody tr {
       height: auto;
       padding: 37px 0;
+      border-bottom: #1d1c1c 1px solid; 
     }
     table tbody tr td {
       padding-left: 40% !important;
@@ -361,6 +365,7 @@
       font-size: 14px;
       padding: 0px !important;
       bottom: 0px;
+      border-bottom: #676867ad 1px solid !important;
     }
 
   }

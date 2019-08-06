@@ -54,16 +54,15 @@ body
                             a(href='/delete_orders')
                                 img.ico_n(src='delete.png ')
                                 | Delete Orders
-        // /gn-scroller
-        li
-            a(href='logout')
-                img.ico(src='logout.png')
-                | Logout
-        li
-            form(class="form-inline my-2 my-lg-0")
+        li(class="xs-3")
+            form(class="form-inline")
                 input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
                 //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
                 button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
+        li(class="xs-3 ")
+            a(href='logout')
+                img.ico(src='logout.png')
+                | Logout
 
 
         .limiter
