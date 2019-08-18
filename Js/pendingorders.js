@@ -27,13 +27,16 @@ console.log("cp3.js working fine");
         var oqty = $('#'+cid).attr("oqty");
         console.log(oqty);
         var pen_qty = oqty -qty;
+	var new_qty = parseInt(pen_qty);
         console.log(pen_qty);
-        if(qty>oqty){
-          window.alert("delivered quantity should be less tha total quantity")
-        }
-        if(qty<=oqty){
+	if(new_qty < 0){
+		window.alert("entered qty is greater than pending qty");
+	}
+
+	      if(new_qty >= 0){
        $('#'+pen_id).html(pen_qty);
-        }
+        };
+
         if(pen_qty==0){
           $('#'+status).html("DELIVERED");
         }
