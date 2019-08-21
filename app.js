@@ -34,6 +34,16 @@ app.use(orderRoutes);
 
 
 //PORT
+const port = 3000
+const alert = require("alert-node");
+// Routes
+const userRoutes = require('./routes/user_route');
+app.use(userRoutes);
+const orderRoutes = require('./routes/order_route');
+app.use(orderRoutes);
+
+
+//PORT
 app.set('port', process.env.PORT || 3000);
 app.set('host', process.env.HOST || '0.0.0.0');
 //app.set('host', process.env.HOST || '127.0.0.1');
@@ -47,8 +57,8 @@ server.listen(app.get('port'), app.get('host'), function(){
 
 mongoose
   .connect(
-//  'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
- 'mongodb://localhost:27017/workflow_mgmt'
+ 'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
+ //'mongodb://localhost:27017/workflow_mgmt'
   )
   .then(result => {
     console.log("Mongodb connection made.")
