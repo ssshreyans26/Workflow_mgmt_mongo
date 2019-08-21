@@ -13,7 +13,7 @@ var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 var server = http.createServer(app)
 const bodyParser = require('body-parser');
-var mongo = require('mongodb'); 
+var mongo = require('mongodb');
 var session = require('express-session');
 app.use(session({ secret: "Shh, its a secret!" }));
 var cookieParser = require("cookie-parser");
@@ -35,8 +35,8 @@ app.use(orderRoutes);
 
 //PORT
 app.set('port', process.env.PORT || 3000);
-//app.set('host', process.env.HOST || '0.0.0.0');
-app.set('host', process.env.HOST || '127.0.0.1');
+app.set('host', process.env.HOST || '0.0.0.0');
+//app.set('host', process.env.HOST || '127.0.0.1');
 
 server.listen(app.get('port'), app.get('host'), function(){
   console.log("Express server listening on port " + app.get('port'));
@@ -47,8 +47,8 @@ server.listen(app.get('port'), app.get('host'), function(){
 
 mongoose
   .connect(
-  //'mongodb://settlrs:SettlrS1!@localhost:27017/workflow_mgmt'
-  'mongodb://localhost:27017/workflow_mgmt'
+//  'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
+ 'mongodb://localhost:27017/workflow_mgmt'
   )
   .then(result => {
     console.log("Mongodb connection made.")
@@ -56,4 +56,4 @@ mongoose
   .catch(err => {
     console.log(err);
   });
-  
+
