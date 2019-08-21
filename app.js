@@ -13,7 +13,7 @@ var cookieParser = require("cookie-parser");
 app.use(cookieParser());
 var server = http.createServer(app)
 const bodyParser = require('body-parser');
-var mongo = require('mongodb'); 
+var mongo = require('mongodb');
 var session = require('express-session');
 app.use(session({ secret: "Shh, its a secret!" }));
 var cookieParser = require("cookie-parser");
@@ -24,6 +24,16 @@ app.use(bodyParser.json()); //to use a function inside the node app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,"images")));
+const port = 3000
+const alert = require("alert-node");
+// Routes
+const userRoutes = require('./routes/user_route');
+app.use(userRoutes);
+const orderRoutes = require('./routes/order_route');
+app.use(orderRoutes);
+
+
+//PORT
 const port = 3000
 const alert = require("alert-node");
 // Routes
@@ -56,4 +66,8 @@ mongoose
   .catch(err => {
     console.log(err);
   });
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> ab08d76f49bf8497d90acf8348fd334ba53b534b

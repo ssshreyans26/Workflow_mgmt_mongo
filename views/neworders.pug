@@ -7,11 +7,19 @@ head
   meta(name='keywords' content='google nexus 7 menu, css transitions, sidebar, side menu, slide out menu')
   meta(name='author' content='Codrops')
   link(rel='shortcut icon' href='../favicon.ico')
+  link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")    
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js") 
   style
     include component.css
+  style
     include demo.css
+  style
     include normalize.css
+  style
     include style.css
+  style
+    include style1.css
   script
     include ../Js/modernizr.custom.js
 body.neworder
@@ -42,37 +50,10 @@ body.neworder
         // /gn-scroller
         li
             a(href='logout')
-                img.ico(src='logout.png')
+                img.ico_n(src='logout.png')
                 | Logout
 
-    //-container
 
-
-    //- div(class="container neworders")
-    //-     form(method="POST" action="/new_orders")
-    //-         div(class="row")
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label(class="") CLIENT NAME
-    //-                 input(type="text" class="form-control" placeholder="CLIENT" name="CLIENT")
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label() VENDOR
-    //-                 input(type="text" class="form-control" placeholder="VENDOR" name="VENDOR")                      
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label() ITEM
-    //-                 input(type="text" class="form-control" placeholder="ITEM" name="ITEM")                      
-    //-         div(class="row pt-4")
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label() QUANTITY
-    //-                 input(type="number" class="form-control" placeholder="QUANTITY" name="QUANTITY")                      
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label() RATE
-    //-                 input(type="number" class="form-control" placeholder="RATE" name="RATE")                      
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 label() PROPERTY ADDRESS
-    //-                 input(type="text" class="form-control" placeholder="ADDRESSS" name="ADDRESS")
-    //-         div(class="row pt-4")
-    //-             div(class="col-md-4 col-sm-12 col-xs-12")
-    //-                 button(type="submit" class="btn btn-primary mt-3 btn-order" name="submit") PLACE ORDER
 .page-wrapper.p-t-180.p-b-100.font-robo
   .wrapper.wrapper--w960
     .card.card-1
@@ -81,20 +62,20 @@ body.neworder
         h2.title New Orders
         form(method='POST' action="/new_orders")
           .row.row-space
-            .col-2
+            .col-6
                 .input-group
                     input.input--style-2(type='text' placeholder="CLIENT" name="CLIENT")
-            .col-2
+            .col-6
                 .input-group
                     input.input--style-2(type='text' placeholder="VENDOR" name="VENDOR")   
-            .col-2                                     
+            .col-6                                    
                 .input-group
                     input.input--style-2.js-datepicker(type='text' placeholder="ITEM" name="ITEM")
-            .col-2
+            .col-6
                 .input-group
                     input.input--style-2.js-datepicker(type='number' placeholder="QUANTITY" name="QUANTITY")
           .input-group
-            input.input--style-2.js-datepicker(type="date" placeholder="EXPECTED-DELIVERY-DATE" name="date")
+            input.input--style-2.js-datepicker(type="date" placeholder="EXPECTED-DELIVERY-DATE" name="date") 
           .input-group        
             input.input--style-2.js-datepicker(type="text" placeholder="ADDRESSS" name="ADDRESS")
           .p-t-30

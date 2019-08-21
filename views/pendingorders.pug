@@ -43,7 +43,7 @@ body
                                 img.ico_n(src='new-orders.png ')
                                 | Create New Orders
                         li
-                             a(href='/pendingorders')
+                            a(href='/pendingorders')
                                 img.ico_n(src='delivered.png')
                                 | Pending Orders
                         li
@@ -54,16 +54,16 @@ body
                             a(href='/delete_orders')
                                 img.ico_n(src='delete.png ')
                                 | Delete Orders
-        // /gn-scroller
-        li
-            a(href='logout')
-                img.ico(src='logout.png')
-                | Logout
-        li
-            form(class="form-inline my-2 my-lg-0")
+                        li(class="xs-3 ")
+                            a(href='logout')
+                                img.ico(src='logout.png')
+                                | Logout
+        li(class="xs-3")
+            form(class="form-inline")
                 input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
                 //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
                 button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search
+                  
 
 
         .limiter
@@ -113,7 +113,7 @@ body
                                             td  
                                                 input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
                                             td 
-                                                button(class="btn btn-primary update" ,type="submit", onclick="" ,id=ID)  UPDATE
+                                                button(class="btn btn-primary" ,type="submit", onclick="" ,id=ID)  UPDATE
     script
         include ../Js/classie.js
         include ../Js/gnmenu.js

@@ -27,6 +27,7 @@
 		font-weight: 300;
 		font-family: 'Lato', Arial, sans-serif;
 		line-height: 60px;
+		/* border-right: #5f6f81 1px solid; */
 }
 
 .gn-menu-main {
@@ -51,15 +52,24 @@
 .no-touch .gn-menu-main a:hover,
 .no-touch .gn-menu li.gn-search-item:hover,
 .no-touch .gn-menu li.gn-search-item:hover a {
-		background: url("pic2.jpg");
+		/* background: url("pic2.jpg"); */
+		background-color: #393250;
+		opacity: 50%;
 		color: white;
-}
+		font-weight: 500;
+	}
+/* .gn-menu-main a:hover{
+	width: 300px;
 
+} */
+.gn-menu li {
+	width: 300px;
+}
 .gn-menu-main > li {
 		display: block;
 		float: left;
 		height: 100%;
-		border-right: 1px solid #c6d0da;
+		/* border-right: 1px solid #c6d0da; */
 		text-align: center;
 }
 
@@ -219,13 +229,14 @@ input.gn-search:focus {
 }
 .ico_n{
 	/* margin: 0px 14px -18px 9px; */
-    margin: 3px;
-    height: 50px;
-}
-.ico{
+    /* margin: 3px; */
+	height: 50px;
 	margin: 0px 14px 0px 9px;
-    height: 50px;
 }
+/* .ico{
+	margin: 0px 14px 0px 9px;
+    height: 50px; 
+}*/
 .gn-icon::before {
 		display: inline-block;
 		width: 60px;
@@ -285,7 +296,9 @@ input.gn-search:focus {
 }
 
 /* if an icon anchor has a span, hide the span */
-
+.gn-icon-menu{
+	border-right: #5f6f81 1px solid;
+}
 .gn-icon span {
 		width: 0;
 		height: 0;
@@ -324,11 +337,11 @@ input.gn-search:focus {
 }
 
 .gn-menu-wrapper.gn-open-all {
-		width: 220px
+		width: 300px
 }
 
 .gn-menu-wrapper.gn-open-all .gn-submenu li {
-		height: 60px
+		height: 60px;
 }
 
 @media screen and (max-width: 422px) { 
