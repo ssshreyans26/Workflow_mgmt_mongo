@@ -24,13 +24,7 @@ app.use(bodyParser.json()); //to use a function inside the node app
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname,"images")));
-const port = 3000
-const alert = require("alert-node");
-// Routes
-const userRoutes = require('./routes/user_route');
-app.use(userRoutes);
-const orderRoutes = require('./routes/order_route');
-app.use(orderRoutes);
+
 
 
 //PORT
@@ -57,8 +51,8 @@ server.listen(app.get('port'), app.get('host'), function(){
 
 mongoose
   .connect(
- 'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
- //'mongodb://localhost:27017/workflow_mgmt'
+ //'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
+ 'mongodb://localhost:27017/workflow_mgmt'
   )
   .then(result => {
     console.log("Mongodb connection made.")

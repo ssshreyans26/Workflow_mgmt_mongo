@@ -121,6 +121,7 @@
     flex-wrap: wrap;
     padding: 30px;
     text-align: center;
+    overflow-y: auto;
   }
   /* .cont{
     margin: 0px !important;

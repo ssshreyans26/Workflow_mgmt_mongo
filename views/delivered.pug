@@ -115,11 +115,11 @@ body
                                                             td(class="column2")=CLIENT   
                                                             td(class="column3")=VENDOR
                                                             td(class="column4")=ITEM
-                                                            td(class="column5" id=update)=ex_del
+                                                            td(class="column5")=ex_del
                                                             td(class="column6")=val.date
                                                             td(class="column7")=PROPERTY_ADDRESS
                                                             td(class="column8") DELIVERED
-                                                            td=val.qty
+                                                            td(id=update)=val.qty
                                                                 td( class="column9")
                                                                     input.del_in(type="number" id=number did=val.d_id oqty=val.qty name="err_qty_updated")
                                                                 td(class="column10") 
