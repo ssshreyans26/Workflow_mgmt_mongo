@@ -81,6 +81,7 @@ body
                                     th.column3 VENDORS
                                     th.column4 ITEM
                                     th.column5 EXPECTED DELIVERY DATE
+                                    th.column12 ORDER PLACED ON
                                     th.column6 DELIVERED ON 
                                     th.column7 ADDRESS
                                     th.column8 ORDER-STATUS
@@ -106,6 +107,7 @@ body
                                                 -var number= ID + "P"
                                                 -var update= ID + "Q"
                                                 -var ex_del = item.expected_delivery_date;
+                                                -var order_placed_on = item.order_placed_on
                                                 -counter++;
                                         
                                                 tbody
@@ -116,6 +118,7 @@ body
                                                             td(class="column3")=VENDOR
                                                             td(class="column4")=ITEM
                                                             td(class="column5")=ex_del
+                                                            td(class="column12")=order_placed_on
                                                             td(class="column6")=val.date_of_delivery
                                                             td(class="column7")=PROPERTY_ADDRESS
                                                             td(class="column8") DELIVERED
