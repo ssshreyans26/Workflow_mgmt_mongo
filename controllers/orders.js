@@ -115,9 +115,11 @@ exports.update = (req, res, next) => {
   var dt = dateTime.create();
   var formatted = dt.format('Y-m-d H:M:S');
   var o_id = req.body.str;
+  var date_of_delivery = req.body.date_of_delivery;
+  
 
   var qty = parseInt(req.body.qty)
-  var delivery_details = { "date": formatted, "user": req.session.user, "qty": qty, d_id: id }
+  var delivery_details = { "date": formatted,"date_of_delivery":date_of_delivery, "user": req.session.user, "qty": qty, d_id: id }
   OrderDetails.findOne({ order_id: o_id }, function (err, user) {
     if (user.quantity > qty) {
       user.quantity = user.quantity - qty;

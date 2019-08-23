@@ -21,13 +21,16 @@ console.log("cp3.js working fine");
         console.log(typeof str);
         var pen_id = str + 'Q';
         var status = str + 'R';
+        var date_of_delivery_id = str + 'S';
         console.log(pen_id)
         var cid = str+'P';
         var qty = $('#'+cid).val();
         var oqty = $('#'+cid).attr("oqty");
+        var date_of_delivery = $('#'+date_of_delivery_id).val();
         console.log(oqty);
         var pen_qty = oqty -qty;
         console.log(pen_qty);
+        console.log(qty>oqty);
         if(qty>oqty){
           window.alert("delivered quantity should be less tha total quantity")
         }
@@ -49,7 +52,7 @@ console.log("cp3.js working fine");
           url: '/update' ,
           contentType: "application/json; charset=utf-8" ,
           processData: false,
-            data:  JSON.stringify({str : str, qty : qty}),
+            data:  JSON.stringify({str : str, qty : qty,date_of_delivery:date_of_delivery}),
             success: function(data) {
               console.log("Successfully saved the matched beans to the user.");
           }

@@ -8,6 +8,7 @@ const supply_mgmtSchema = new Schema({
       flag:{type:Boolean,required:true},
       delivery_details : [ {
           date : {type: String, required: false},
+          date_of_delivery: {type: String, required:false},
           user : {type: String, required:false},
           qty  : {type: Number, required: false},
           d_id : {type: String, required: false}
