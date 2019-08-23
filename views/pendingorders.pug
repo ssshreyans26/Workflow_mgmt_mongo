@@ -79,6 +79,7 @@ body
                                     th.column4 ITEM
                                     th.column5 QUANTITY
                                     th.column6 EXPECTED DELIVERY DATE
+                                    th.column12 ORDER PLACED ON 
                                     th.column7 ADDRESS
                                     th.column8 ORDER-STATUS
                                     th.column9 DELIVERED QUANTITIES
@@ -96,6 +97,7 @@ body
                                     -var ORDER_STATUS = item.order_status;
                                     -var ID =item.order_id;
                                     -var ex_del = item.expected_delivery_date;
+                                    -var order_placed_on = item.order_placed_on;
                                     -var number= ID + "P"
                                     -var update = ID + "Q"
                                     -var status = ID + "R"
@@ -109,6 +111,7 @@ body
                                             td=ITEM
                                             td(id=update)=QUANTITY
                                             td=ex_del
+                                            td=order_placed_on
                                             td=PROPERTY_ADDRESS
                                             td(id=status)=ORDER_STATUS
                                             form(action="" method="POST")
