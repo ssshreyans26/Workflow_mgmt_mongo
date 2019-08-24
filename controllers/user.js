@@ -3,6 +3,11 @@ const SignUp = require("../model1/sign_up.js");
 const Employes = require("../model1/employes.js")
 const alert = require("alert-node");
 
+exports.test =(req,res,next) => {
+  res.render('test.pug');
+}
+
+
 exports.login = (req, res, next) => {
   res.render('login.pug');  
 }
