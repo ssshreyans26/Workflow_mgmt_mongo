@@ -25,6 +25,7 @@
     "date-time": "^3.1.0",
     "express": "^4.16.4",
     "express-session": "^1.16.1",
+    "jade-bootstrap": "^1.0.14",
     "lowdb": "^1.0.0",
     "mongodb": "^3.2.7",
     "mongoose": "^5.6.3",
