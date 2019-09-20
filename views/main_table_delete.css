@@ -82,7 +82,14 @@
   iframe {
       border: none !important;
   }
-  
+  .container{
+    max-width: 100% !important;
+  }
+
+  .container-table100{
+    max-width: 100% !important;
+
+  }
   
   
   

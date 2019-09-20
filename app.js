@@ -51,8 +51,8 @@ server.listen(app.get('port'), app.get('host'), function(){
 
 mongoose
   .connect(
- 'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
- //'mongodb://localhost:27017/workflow_mgmt'
+ //'mongodb://workflowmgmt:WorkflowmgmT1!@localhost:27017/workflow_mgmt'
+ 'mongodb://localhost:27017/workflow_mgmt'
   )
   .then(result => {
     console.log("Mongodb connection made.")
