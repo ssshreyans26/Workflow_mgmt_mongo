@@ -29,7 +29,6 @@ head
   script
     include ../Js/modernizr.custom.js
 body
-.container
     ul#gn-menu.gn-menu-main
         li.gn-trigger
             a.gn-icon.gn-icon-menu
@@ -69,64 +68,64 @@ body
 
 
 
-        .limiter
-            .container-table100
-                .wrap-table100
-                    .table100
-                        table
-                            thead
-                                tr.table100-head
-                                    th.column1 NUMBER
-                                    th.column2 CLIENTS
-                                    th.column3 VENDORS
-                                    th.column4 ITEM
-                                    th.column5 EXPECTED DELIVERY DATE
-                                    th.column12 ORDER PLACED ON
-                                    th.column6 DELIVERED ON 
-                                    th.column7 ADDRESS
-                                    th.column8 ORDER-STATUS
-                                    th.column9 QUANTITY DELIVERED
-                                    th.column10 UPDATE QUANTITY IF ERROR
-                                    th.column11 UPDATE
+    .limiter
+        .container-table100
+            .wrap-table100
+                .table100
+                    table
+                        thead
+                            tr.table100-head
+                                th.column1 NUMBER
+                                th.column2 CLIENTS
+                                th.column3 VENDORS
+                                th.column4 ITEM
+                                th.column5 EXPECTED DELIVERY DATE
+                                th.column12 ORDER PLACED ON
+                                th.column6 DELIVERED ON 
+                                th.column7 ADDRESS
+                                th.column8 ORDER-STATUS
+                                th.column9 QUANTITY DELIVERED
+                                th.column10 UPDATE QUANTITY IF ERROR
+                                th.column11 UPDATE
 
-                                    -var counter =0;
-                                each ele in del
-                                    if(ele.flag == false)
-                                        -var ID =ele.order_id;
-                                        -var delivery_details = []
-                                        -delivery_details = ele.delivery_details
-                                        -var length = delivery_details.length
-                                        each item in user
-                                            if(item.order_id == ID&&item.flag==false)
-                                                -var CLIENT = item.client;
-                                                -var VENDOR = item.vendor;
-                                                -var ITEM = item.item;
-                                                -var QUANTITY = item.quantity;
-                                                -var PROPERTY_ADDRESS = item.property_address;
-                                                -var ORDER_STATUS = item.order_status;
-                                                -var number= ID + "P"
-                                                -var update= ID + "Q"
-                                                -var ex_del = item.expected_delivery_date;
-                                                -var order_placed_on = item.order_placed_on
-                                                -counter++;
-                                        
-                                                tbody
-                                                each val in delivery_details
-                                                    tr
-                                                        td(scope="row" class="column1")=counter
-                                                            td(class="column2")=CLIENT   
-                                                            td(class="column3")=VENDOR
-                                                            td(class="column4")=ITEM
-                                                            td(class="column5")=ex_del
-                                                            td(class="column12")=order_placed_on
-                                                            td(class="column6")=val.date_of_delivery
-                                                            td(class="column7")=PROPERTY_ADDRESS
-                                                            td(class="column8") DELIVERED
-                                                            td(id=update)=val.qty
-                                                                td( class="column9")
-                                                                    input.del_in(type="number" id=number did=val.d_id oqty=val.qty name="err_qty_updated")
-                                                                td(class="column10") 
-                                                                    button(class="btn btn-primary" type="submit" onclick="" id=ID) UPDATE
+                                -var counter =0;
+                            each ele in del
+                                if(ele.flag == false)
+                                    -var ID =ele.order_id;
+                                    -var delivery_details = []
+                                    -delivery_details = ele.delivery_details
+                                    -var length = delivery_details.length
+                                    each item in user
+                                        if(item.order_id == ID&&item.flag==false)
+                                            -var CLIENT = item.client;
+                                            -var VENDOR = item.vendor;
+                                            -var ITEM = item.item;
+                                            -var QUANTITY = item.quantity;
+                                            -var PROPERTY_ADDRESS = item.property_address;
+                                            -var ORDER_STATUS = item.order_status;
+                                            -var number= ID + "P"
+                                            -var update= ID + "Q"
+                                            -var ex_del = item.expected_delivery_date;
+                                            -var order_placed_on = item.order_placed_on
+                                            -counter++;
+                                    
+                                            tbody
+                                            each val in delivery_details
+                                                tr
+                                                    td(scope="row" class="column1")=counter
+                                                        td(class="column2")=CLIENT   
+                                                        td(class="column3")=VENDOR
+                                                        td(class="column4")=ITEM
+                                                        td(class="column5")=ex_del
+                                                        td(class="column12")=order_placed_on
+                                                        td(class="column6")=val.date_of_delivery
+                                                        td(class="column7")=PROPERTY_ADDRESS
+                                                        td(class="column8") DELIVERED
+                                                        td(id=update)=val.qty
+                                                            td( class="column9")
+                                                                input.del_in(type="number" id=number did=val.d_id oqty=val.qty name="err_qty_updated")
+                                                            td(class="column10") 
+                                                                button(class="btn btn-primary" type="submit" onclick="" id=ID) UPDATE
 script
     include ../Js/classie.js
     include ../Js/gnmenu.js

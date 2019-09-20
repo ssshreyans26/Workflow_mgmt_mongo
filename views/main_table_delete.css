@@ -5,209 +5,165 @@
 
 
 @font-face {
-    font-family: OpenSans-Regular;
-    src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
-  }
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ RESTYLE TAG ]*/
-  * {
-      /* margin: 0px; 
-      padding: 0px;  */
-      box-sizing: border-box;
-  }
-  
-  body, html {
-      height: 100%;
-      font-family: sans-serif;
-  }
-  
-  /* ------------------------------------ */
-  a {
-      margin: 0px;
-      transition: all 0.4s;
-      -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-  }
-  
-  a:focus {
-      outline: none !important;
-  }
-  
-  a:hover {
-      text-decoration: none;
-  }
-  
-  /* ------------------------------------ */
-  h1,h2,h3,h4,h5,h6 {margin: 0px;}
-  
-  p {margin: 0px;}
-  
-  ul, li {
-      margin: 0px;
-      list-style-type: none;
-  }
-  
-  
-  /* ------------------------------------ */
-  input {
-    /* display: block; */
-      outline: none;
-      border: none !important;
-  }
-  
-  textarea {
-    display: block;
+  font-family: OpenSans-Regular;
+  src: url('../fonts/OpenSans/OpenSans-Regular.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+* {
+    /* margin: 0px; 
+    padding: 0px;  */
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: sans-serif;
+    overflow-y: auto;
+}
+.right{
+  margin-right: 0%;
+}
+/* ------------------------------------ */
+a {
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* ------------------------------------ */
+h1,h2,h3,h4,h5,h6 {margin: 0px;}
+
+p {margin: 0px;}
+
+ul, li {
+    margin: 0px;
+    list-style-type: none;
+}
+
+
+/* ------------------------------------ */
+input {
+  /* display: block; */
     outline: none;
-  }
-  
-  textarea:focus, input:focus {
-    border-color: transparent !important;
-  }
-  
-  /* ------------------------------------ */
-  button {
-      outline: none !important;
-      border: none;
-      background: transparent;
-  }
-  
-  button:hover {
-      cursor: pointer;
-  }
-  
-  iframe {
-      border: none !important;
-  }
-  .container{
-    max-width: 100% !important;
-  }
+    border: none !important;
+}
 
-  .container-table100{
-    max-width: 100% !important;
+textarea {
+  display: block;
+  outline: none;
+}
 
-  }
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Utiliti ]*/
-  
-  
-  
-  
-  
-  
-  /*//////////////////////////////////////////////////////////////////
-  [ Table ]*/
-  
-  .limiter {
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-  .container-table100 {
-    width: 100%;
-    /* min-height: 100vh; */
-      /* background: #c850c0;
-      background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
-      background: -o-linear-gradient(45deg, #4158d0, #c850c0);
-      background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
-      background: linear-gradient(45deg, #4158d0, #c850c0); */
-  
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px;
-    text-align: center;
-    overflow-y: scroll;
-  }
-  /* .cont{
-    margin: 0px !important;
-  } */
-  
-  .wrap-table100 {
-    position: relative;
-    /* z-index: -1; */
-  }
-  
-  table {
-    border-spacing: 1;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    /* margin-top: 100px; */
-    /* z-index: -1; */
-  }
-  table * {
-    position: relative;
-  }
-  table td, table th {
-    padding: 15px;
-  }
-  table thead tr {
-    height: 60px;
-    background: #393250;
-    /* background: #36304a; */
-  }
-  table tbody tr {
-    height: 50px;
-    background-color: #e7e3e3;
-  }
-  table tbody tr:last-child {
-    border: 0;
-  }
-  table td, table th {
-    text-align: center;
-  }
-  table td.l, table th.l {
-    text-align: right;
-  }
-  table td.c, table th.c {
-    text-align: center;
-  }
-  table td.r, table th.r {
-    text-align: center;
-  }
-  
-  .table100-head th{
-    font-family: OpenSans-Regular;
-    font-size: 18px;
-    color: #fff;
-    line-height: 1.2;
-    font-weight: unset;
-    
-  }
-  
-  tbody tr:nth-child(even) {
-    background-color: #dad6d6;
-  }
-  
-  tbody tr {
-    font-family: OpenSans-Regular;
-    font-size: 15px;
-    color: #080808;
-    line-height: 1.2;
-    font-weight: unset;
-  }
-  
-  tbody tr:hover{
-    color: #1d1c1c;
-    background-color: #f7f4f4ec ;
-    cursor: pointer ;
-  }
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+/* ------------------------------------ */
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+iframe {
+    border: none !important;
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utiliti ]*/
+
+
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Table ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+  margin-top:50px;
+}
+
+.container-table100 {
+  width: 100%;
+  /* min-height: 100vh; */
+    /* background: #c850c0;
+    background: -webkit-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -o-linear-gradient(45deg, #4158d0, #c850c0);
+    background: -moz-linear-gradient(45deg, #4158d0, #c850c0);
+    background: linear-gradient(45deg, #4158d0, #c850c0); */
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px;
+  text-align: center;
+}
+/* .cont{
+  margin: 0px !important;
+} */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
   
   .column1 {
     width: 260px;
@@ -278,49 +234,55 @@
   }
   
   @media screen and (max-width: 992px) {
-    thead, tbody { display: block; }
-
-    .container-table100 {
-        height: 800px;       /* Just for the demo          */
-        overflow-y: auto;    /* Trigger vertical scroll    */
-        overflow-x: hidden;  /* Hide the horizontal scroll */
-    }
     table {
-      display: block;
+      border: 0;
+      width: 400px;
     }
-    table > *, table tr, table td, table th {
-      display: block;
+  
+    table caption {
+      font-size: 1.3em;
     }
+    
     table thead {
-      display: none;
-    }
-    table tbody tr {
-      height: auto;
-      padding: 37px 0;
-    }
-    table tbody tr:hover{
-        color: #1d1c1c !important;
-        background-color: white !important;
-        cursor: pointer !important;
-      }
-    table tbody tr td {
-      padding-left: 40% !important;
-      margin-bottom: 24px;
-    }
-    table tbody tr td:last-child {
-      margin-bottom: 0;
-    }
-    table tbody tr td:before {
-      font-family: OpenSans-Regular;
-      font-size: 14px;
-      color: #999999;
-      line-height: 1.2;
-      font-weight: unset;
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
       position: absolute;
-      width: 40%;
-      left: 30px;
-      top: 0;
+      width: 1px;
     }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    table td::before {
+      /*
+      * aria-label has no advantage, it won't be read inside a table
+      content: attr(aria-label);
+      */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+
     table tbody tr th:nth-child(1):before {
       content: "NUMBER";
     }
