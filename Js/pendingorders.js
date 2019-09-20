@@ -28,9 +28,10 @@ console.log("cp3.js working fine");
         var oqty = $('#'+cid).attr("oqty");
         var date_of_delivery = $('#'+date_of_delivery_id).val();
         console.log(oqty);
-        var pen_qty = oqty -qty;
+        var pen_qty = parseInt(oqty -qty);
         console.log(pen_qty);
         console.log(qty>oqty);
+        qty = parseInt(qty);
         if(qty>oqty){
           window.alert("delivered quantity should be less tha total quantity")
         }
