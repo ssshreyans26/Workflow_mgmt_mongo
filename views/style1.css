@@ -17,7 +17,7 @@
       height: 30px;
       margin-bottom: 2px; */
 
- }
+ 
 th, td {
     text-align: center;
     padding: 8px;
@@ -192,11 +192,6 @@ a:hover{
 .text{
   margin-top: 50px;
   text-align: center;
-}
-.chutiya{
-  text-align: center;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 /* new-orders */
 /* .neworders{
