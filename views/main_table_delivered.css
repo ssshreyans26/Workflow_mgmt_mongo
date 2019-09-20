@@ -236,7 +236,7 @@ table th {
   @media screen and (max-width: 992px) {
     table {
       border: 0;
-      width: 400px;
+      width: 100%;
     }
   
     table caption {
