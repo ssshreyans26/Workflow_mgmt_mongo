@@ -30,7 +30,6 @@ head
     include ../Js/modernizr.custom.js
 
 body
-.container
     ul#gn-menu.gn-menu-main
         li.gn-trigger
             a.gn-icon.gn-icon-menu
@@ -66,54 +65,61 @@ body
                   
 
 
-        .limiter
-            .container-table100
-                .wrap-table100
-                    .table100
-                        table
-                            thead
-                                tr.table100-head
-                                    th.column1 NUMBER
-                                    th.column2 CLIENTS
-                                    th.column3 VENDORS
-                                    th.column4 ITEM
-                                    th.column5 QUANTITY
-                                    th.column6 EXPECTED DELIVERY DATE
-                                    th.column7 ADDRESS
-                                    th.column8 ORDER-STATUS
-                                    th.column9 DELIVERED QUANTITIES
-                                    th.column10 UPDATE
+    .limiter
+        .container-table100
+            .wrap-table100
+                .table100
+                    table
+                        thead
+                            tr.table100-head
+                                th.column1 NUMBER
+                                th.column2 CLIENTS
+                                th.column3 VENDORS
+                                th.column4 ITEM
+                                th.column5 QUANTITY
+                                th.column6 EXPECTED DELIVERY DATE
+                                th.column12 ORDER PLACED ON 
+                                th.column7 ADDRESS
+                                th.column8 ORDER-STATUS
+                                th.column9 DELIVERED QUANTITIES
+                                th.coloumn10 DATE OF DELIVERY
+                                th.column11 UPDATE
 
-                                    -var counter = 0
-                            each item in orderdetails
-                                if(item.quantity!=0&&item.flag==false)    
-                                    -var CLIENT = item.client;
-                                    -var VENDOR = item.vendor;
-                                    -var ITEM= item.item;
-                                    -var QUANTITY=item.quantity;
-                                    -var PROPERTY_ADDRESS=item.property_address;
-                                    -var ORDER_STATUS = item.order_status;
-                                    -var ID =item.order_id;
-                                    -var ex_del = item.expected_delivery_date;
-                                    -var number= ID + "P"
-                                    -var update = ID + "Q"
-                                    -var status = ID + "R"
-                                    -counter++
-                                    tbody
-                                    tr
-                                        th(scope="row" class="num")=counter
-                                            td=CLIENT   
-                                            td=VENDOR
-                                            td=ITEM
-                                            td(id=update)=QUANTITY
-                                            td=ex_del
-                                            td=PROPERTY_ADDRESS
-                                            td(id=status)=ORDER_STATUS
-                                            form(action="" method="POST")
-                                            td  
-                                                input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
-                                            td 
-                                                button(class="btn btn-primary" ,type="submit", onclick="" ,id=ID)  UPDATE
+                                -var counter = 0
+                        each item in orderdetails
+                            if(item.quantity!=0&&item.flag==false)    
+                                -var CLIENT = item.client;
+                                -var VENDOR = item.vendor;
+                                -var ITEM= item.item;
+                                -var QUANTITY=item.quantity;
+                                -var PROPERTY_ADDRESS=item.property_address;
+                                -var ORDER_STATUS = item.order_status;
+                                -var ID =item.order_id;
+                                -var ex_del = item.expected_delivery_date;
+                                -var order_placed_on = item.order_placed_on;
+                                -var number= ID + "P"
+                                -var update = ID + "Q"
+                                -var status = ID + "R"
+                                -var delivery_date = ID + "S"
+                                -counter++
+                                tbody
+                                tr
+                                    th(scope="row" class="num")=counter
+                                        td=CLIENT   
+                                        td=VENDOR
+                                        td=ITEM
+                                        td(id=update)=QUANTITY
+                                        td=ex_del
+                                        td=order_placed_on
+                                        td=PROPERTY_ADDRESS
+                                        td(id=status)=ORDER_STATUS
+                                        form(action="" method="POST")
+                                        td  
+                                            input(type="number" id=number  name="qty_updated" oqty=QUANTITY  min="1" max=QUANTITY)
+                                        td
+                                            input(type="date" name="date_of_delivery" id=delivery_date)
+                                        td 
+                                            button(class="btn btn-primary" ,type="submit", onclick="" ,id=ID)  UPDATE
     script
         include ../Js/classie.js
         include ../Js/gnmenu.js

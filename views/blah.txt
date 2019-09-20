@@ -1,0 +1,38 @@
+//-   style
+//-     include component.css
+//-   style
+//-     include demo.css
+//-   style
+//-     include normalize.css
+    //- ul#gn-menu.gn-menu-main
+    //-     li.gn-trigger
+    //-         a.gn-icon.gn-icon-menu
+    //-             span Menu
+    //-         nav.gn-menu-wrapper
+    //-             .gn-scroller
+    //-                 ul.gn-menu
+    //-                     li
+    //-                         a(href='/neworders')
+    //-                             img.ico_n(src='new-orders.png ')
+    //-                             | Create New Orders
+    //-                     li
+    //-                         a(href='/pendingorders')
+    //-                             img.ico_n(src='delivered.png')
+    //-                             | Pending Orders
+    //-                     li
+    //-                         a(href='/delivered')
+    //-                             img.ico_n(src='par-delivered.png ')
+    //-                             | Delivered Orders
+    //-                     li
+    //-                         a(href='/delete_orders')
+    //-                             img.ico_n(src='delete.png ')
+    //-                             | Delete Orders
+    //-                     li(class="xs-3 ")
+    //-                         a(href='logout')
+    //-                             img.ico(src='logout.png')
+    //-                             | Logout
+    //-     li(class="xs-3")
+    //-         form(class="form-inline")
+    //-             input(class="form-control mr-sm-2 box-search" type="search" id="search" onkeyup="myFunction()" placeholder="Search.." title="Type in a name")
+    //-             //- input(class="form-control mr-sm-2 box-search" type="search" placeholder="Search" aria-label="Search")
+    //-             button(class="btn btn-outline-success btn-search my-2 my-sm-0" type="submit") Search

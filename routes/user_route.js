@@ -24,4 +24,6 @@ router.get('/logout',userController.logout);
 
 router.get('/reject',userController.reject);
 
+router.get('/test',userController.test);
+
 module.exports = router;

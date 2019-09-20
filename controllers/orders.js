@@ -68,12 +68,13 @@ exports.new_orders = (req, res, next) => {
   var dt = dateTime.create();
   var formatted = dt.format('Y-m-d H:M:S');
   console.log(req.body.date)
-
+  console.log(req.body.order_placed_on);
   const order = new OrderDetails({
     client: req.body.CLIENT,
     vendor: req.body.VENDOR,
     item: req.body.ITEM,
     expected_delivery_date: req.body.date,
+    order_placed_on: req.body.order_placed_on,
     quantity: req.body.QUANTITY,
     property_address: req.body.ADDRESS,
     order_status: "PENDING",
@@ -115,9 +116,11 @@ exports.update = (req, res, next) => {
   var dt = dateTime.create();
   var formatted = dt.format('Y-m-d H:M:S');
   var o_id = req.body.str;
+  var date_of_delivery = req.body.date_of_delivery;
+  
 
   var qty = parseInt(req.body.qty)
-  var delivery_details = { "date": formatted, "user": req.session.user, "qty": qty, d_id: id }
+  var delivery_details = { "date": formatted,"date_of_delivery":date_of_delivery, "user": req.session.user, "qty": qty, d_id: id }
   OrderDetails.findOne({ order_id: o_id }, function (err, user) {
     if (user.quantity > qty) {
       user.quantity = user.quantity - qty;

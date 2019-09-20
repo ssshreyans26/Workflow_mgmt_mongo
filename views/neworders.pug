@@ -64,20 +64,24 @@ body.neworder
           .row.row-space
             .col-6
                 .input-group
-                    input.input--style-2(type='text' placeholder="CLIENT" name="CLIENT")
+                    input.input--style-2(type='text' placeholder="CLIENT" name="CLIENT" required)
             .col-6
                 .input-group
-                    input.input--style-2(type='text' placeholder="VENDOR" name="VENDOR")   
+                    input.input--style-2(type='text' placeholder="VENDOR" name="VENDOR" required)   
             .col-6                                    
                 .input-group
-                    input.input--style-2.js-datepicker(type='text' placeholder="ITEM" name="ITEM")
+                    input.input--style-2.js-datepicker(type='text' placeholder="ITEM" name="ITEM" required)
             .col-6
                 .input-group
-                    input.input--style-2.js-datepicker(type='number' placeholder="QUANTITY" name="QUANTITY")
+                    input.input--style-2.js-datepicker(type='number' placeholder="QUANTITY" name="QUANTITY" required)
           .input-group
-            input.input--style-2.js-datepicker(type="date" placeholder="EXPECTED-DELIVERY-DATE" name="date") 
+            label EXPECTED DATE OF DELIEVRY
+            input.input--style-2.js-datepicker(type="date" placeholder="EXPECTED-DELIVERY-DATE" name="date" required) 
+          .input-group
+            label ORDER PLACED ON
+            input.input--style-2.js-datepicker(type="date" placeholder="order_placed_on" name="order_placed_on" required) 
           .input-group        
-            input.input--style-2.js-datepicker(type="text" placeholder="ADDRESSS" name="ADDRESS")
+            input.input--style-2.js-datepicker(type="text" placeholder="ADDRESSS" name="ADDRESS" required)
           .p-t-30
             button.btn.btn--radius.btn--green(type='submit') Place Order
 
